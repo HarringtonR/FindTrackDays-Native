@@ -1,45 +1,42 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, Text, View, Dimensions, Image} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <ImageBackground style={styles.ImageBackground} source={require('./src/assets/photo-1532126438530-dbae987d263c.jpeg')}>
+          <View style={styles.title}>
+            <Text style={styles.welcome}>Welcome to Find Track Days!</Text>
+          </View>
+        </ImageBackground>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = ({
   container: {
+    flex: 1
+  },
+  ImageBackground: {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height
+  },
+  title:{
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   welcome: {
+
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+
   },
   instructions: {
     textAlign: 'center',
